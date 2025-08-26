@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Notepad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="notepad-container">
+        <!-- Header -->
+        <header class="notepad-header">
+            <h1>✨ Colorful Notepad</h1>
+            <div class="header-controls">
+                <button id="saveBtn" class="btn btn-primary">💾 Save</button>
+                <button id="loadBtn" class="btn btn-secondary">📁 Load</button>
+                <button id="clearBtn" class="btn btn-danger">🗑️ Clear</button>
+            </div>
+        </header>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <!-- Text Formatting -->
+            <div class="toolbar-section">
+                <button id="boldBtn" class="btn btn-tool" title="Bold">B</button>
+                <button id="italicBtn" class="btn btn-tool" title="Italic">I</button>
+                <button id="underlineBtn" class="btn btn-tool" title="Underline">U</button>
+                <button id="strikeBtn" class="btn btn-tool" title="Strikethrough">S</button>
+            </div>
+
+            <!-- Font Controls -->
+            <div class="toolbar-section">
+                <select id="fontFamily" class="select-control">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Inter">Inter</option>
+                </select>
+                <select id="fontSize" class="select-control">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="24">24px</option>
+                    <option value="28">28px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+
+            <!-- Color Controls -->
+            <div class="toolbar-section">
+                <input type="color" id="textColor" class="color-picker" title="Text Color" value="#000000">
+                <input type="color" id="bgColor" class="color-picker" title="Background Color" value="#ffffff">
+            </div>
+
+            <!-- Alignment -->
+            <div class="toolbar-section">
+                <button id="alignLeft" class="btn btn-tool" title="Align Left">⫷</button>
+                <button id="alignCenter" class="btn btn-tool" title="Align Center">⫸</button>
+                <button id="alignRight" class="btn btn-tool" title="Align Right">⫹</button>
+            </div>
+
+            <!-- Lists -->
+            <div class="toolbar-section">
+                <button id="bulletList" class="btn btn-tool" title="Bullet List">•</button>
+                <button id="numberList" class="btn btn-tool" title="Numbered List">1.</button>
+            </div>
+
+            <!-- Table -->
+            <div class="toolbar-section">
+                <button id="insertTable" class="btn btn-tool" title="Insert Table">⊞</button>
+            </div>
+
+            <!-- Symbols -->
+            <div class="toolbar-section">
+                <button id="symbolsBtn" class="btn btn-tool" title="Insert Symbols">☺</button>
+            </div>
+        </div>
+
+        <!-- Main Editor -->
+        <div class="editor-container">
+            <div id="editor" class="editor" contenteditable="true" spellcheck="false">
+                <p>Welcome to Colorful Notepad! ✨</p>
+                <p>Start typing your notes here...</p>
+            </div>
+        </div>
+
+        <!-- Symbols Modal -->
+        <div id="symbolsModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Insert Symbols</h3>
+                    <button id="closeSymbols" class="btn btn-close">&times;</button>
+                </div>
+                <div class="symbols-grid">
+                    <button class="symbol-btn">☺</button>
+                    <button class="symbol-btn">☻</button>
+                    <button class="symbol-btn">♥</button>
+                    <button class="symbol-btn">♦</button>
+                    <button class="symbol-btn">♣</button>
+                    <button class="symbol-btn">♠</button>
+                    <button class="symbol-btn">•</button>
+                    <button class="symbol-btn">◦</button>
+                    <button class="symbol-btn">▪</button>
+                    <button class="symbol-btn">▫</button>
+                    <button class="symbol-btn">◊</button>
+                    <button class="symbol-btn">○</button>
+                    <button class="symbol-btn">●</button>
+                    <button class="symbol-btn">◐</button>
+                    <button class="symbol-btn">◑</button>
+                    <button class="symbol-btn">◒</button>
+                    <button class="symbol-btn">◓</button>
+                    <button class="symbol-btn">◔</button>
+                    <button class="symbol-btn">◕</button>
+                    <button class="symbol-btn">◖</button>
+                    <button class="symbol-btn">◗</button>
+                    <button class="symbol-btn">◘</button>
+                    <button class="symbol-btn">◙</button>
+                    <button class="symbol-btn">◚</button>
+                    <button class="symbol-btn">◛</button>
+                    <button class="symbol-btn">◜</button>
+                    <button class="symbol-btn">◝</button>
+                    <button class="symbol-btn">◞</button>
+                    <button class="symbol-btn">◟</button>
+                    <button class="symbol-btn">◠</button>
+                    <button class="symbol-btn">◡</button>
+                    <button class="symbol-btn">◢</button>
+                    <button class="symbol-btn">◣</button>
+                    <button class="symbol-btn">◤</button>
+                    <button class="symbol-btn">◥</button>
+                    <button class="symbol-btn">◦</button>
+                    <button class="symbol-btn">◧</button>
+                    <button class="symbol-btn">◨</button>
+                    <button class="symbol-btn">◩</button>
+                    <button class="symbol-btn">◪</button>
+                    <button class="symbol-btn">◫</button>
+                    <button class="symbol-btn">◬</button>
+                    <button class="symbol-btn">◭</button>
+                    <button class="symbol-btn">◮</button>
+                    <button class="symbol-btn">◯</button>
+                    <button class="symbol-btn">◰</button>
+                    <button class="symbol-btn">◱</button>
+                    <button class="symbol-btn">◲</button>
+                    <button class="symbol-btn">◳</button>
+                    <button class="symbol-btn">◴</button>
+                    <button class="symbol-btn">◵</button>
+                    <button class="symbol-btn">◶</button>
+                    <button class="symbol-btn">◷</button>
+                    <button class="symbol-btn">◸</button>
+                    <button class="symbol-btn">◹</button>
+                    <button class="symbol-btn">◺</button>
+                    <button class="symbol-btn">◻</button>
+                    <button class="symbol-btn">◼</button>
+                    <button class="symbol-btn">◽</button>
+                    <button class="symbol-btn">◾</button>
+                    <button class="symbol-btn">◿</button>
+                    <button class="symbol-btn">☀</button>
+                    <button class="symbol-btn">☁</button>
+                    <button class="symbol-btn">☂</button>
+                    <button class="symbol-btn">☃</button>
+                    <button class="symbol-btn">☄</button>
+                    <button class="symbol-btn">★</button>
+                    <button class="symbol-btn">☆</button>
+                    <button class="symbol-btn">☎</button>
+                    <button class="symbol-btn">☏</button>
+                    <button class="symbol-btn">☐</button>
+                    <button class="symbol-btn">☑</button>
+                    <button class="symbol-btn">☒</button>
+                    <button class="symbol-btn">☓</button>
+                    <button class="symbol-btn">☔</button>
+                    <button class="symbol-btn">☕</button>
+                    <button class="symbol-btn">☖</button>
+                    <button class="symbol-btn">☗</button>
+                    <button class="symbol-btn">☘</button>
+                    <button class="symbol-btn">☙</button>
+                    <button class="symbol-btn">☚</button>
+                    <button class="symbol-btn">☛</button>
+                    <button class="symbol-btn">☜</button>
+                    <button class="symbol-btn">☝</button>
+                    <button class="symbol-btn">☞</button>
+                    <button class="symbol-btn">☟</button>
+                    <button class="symbol-btn">☠</button>
+                    <button class="symbol-btn">☡</button>
+                    <button class="symbol-btn">☢</button>
+                    <button class="symbol-btn">☣</button>
+                    <button class="symbol-btn">☤</button>
+                    <button class="symbol-btn">☥</button>
+                    <button class="symbol-btn">☦</button>
+                    <button class="symbol-btn">☧</button>
+                    <button class="symbol-btn">☨</button>
+                    <button class="symbol-btn">☩</button>
+                    <button class="symbol-btn">☪</button>
+                    <button class="symbol-btn">☫</button>
+                    <button class="symbol-btn">☬</button>
+                    <button class="symbol-btn">☭</button>
+                    <button class="symbol-btn">☮</button>
+                    <button class="symbol-btn">☯</button>
+                    <button class="symbol-btn">☰</button>
+                    <button class="symbol-btn">☱</button>
+                    <button class="symbol-btn">☲</button>
+                    <button class="symbol-btn">☳</button>
+                    <button class="symbol-btn">☴</button>
+                    <button class="symbol-btn">☵</button>
+                    <button class="symbol-btn">☶</button>
+                    <button class="symbol-btn">☷</button>
+                    <button class="symbol-btn">☸</button>
+                    <button class="symbol-btn">☹</button>
+                    <button class="symbol-btn">☺</button>
+                    <button class="symbol-btn">☻</button>
+                    <button class="symbol-btn">☼</button>
+                    <button class="symbol-btn">☽</button>
+                    <button class="symbol-btn">☾</button>
+                    <button class="symbol-btn">☿</button>
+                    <button class="symbol-btn">♀</button>
+                    <button class="symbol-btn">♂</button>
+                    <button class="symbol-btn">♁</button>
+                    <button class="symbol-btn">♃</button>
+                    <button class="symbol-btn">♄</button>
+                    <button class="symbol-btn">♅</button>
+                    <button class="symbol-btn">♆</button>
+                    <button class="symbol-btn">♇</button>
+                    <button class="symbol-btn">♈</button>
+                    <button class="symbol-btn">♉</button>
+                    <button class="symbol-btn">♊</button>
+                    <button class="symbol-btn">♋</button>
+                    <button class="symbol-btn">♌</button>
+                    <button class="symbol-btn">♍</button>
+                    <button class="symbol-btn">♎</button>
+                    <button class="symbol-btn">♏</button>
+                    <button class="symbol-btn">♐</button>
+                    <button class="symbol-btn">♑</button>
+                    <button class="symbol-btn">♒</button>
+                    <button class="symbol-btn">♓</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table Modal -->
+        <div id="tableModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Insert Table</h3>
+                    <button id="closeTable" class="btn btn-close">&times;</button>
+                </div>
+                <div class="table-controls">
+                    <label for="tableRows">Rows:</label>
+                    <input type="number" id="tableRows" min="1" max="20" value="3">
+                    <label for="tableCols">Columns:</label>
+                    <input type="number" id="tableCols" min="1" max="20" value="3">
+                    <button id="createTable" class="btn btn-primary">Create Table</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <span id="wordCount">Words: 0</span>
+            <span id="charCount">Characters: 0</span>
+            <span id="currentTime"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
